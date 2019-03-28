@@ -46,6 +46,7 @@ class App extends Component {
 
   render() {
     let persons = null;
+    let btnClass = '';
 
     if(this.state.showState){ 
       persons = (
@@ -61,6 +62,7 @@ class App extends Component {
           )}
         </div>
       );
+      btnClass = classes.Red;
     }
 
     const assignedClasses = [];
@@ -75,7 +77,7 @@ return (
         <div className={classes.App}>
           <h1>This is a React App</h1>
           <p className={assignedClasses.join(' ')}>This is really working</p> 
-          <button onClick={this.toggleNameHandler}>toggle Name</button>
+          <button className={btnClass} onClick={this.toggleNameHandler}>toggle Name</button>
           {persons}
         </div>
     );
